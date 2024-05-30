@@ -42,6 +42,11 @@ pub fn get_v2_global_pairs(psbt: &Psbt) -> Vec<raw::Pair> {
     } = psbt.global.tx_data;
     let input_count_vint = VarInt(psbt.n_inputs() as u64);
     let output_count_vint = VarInt(psbt.n_outputs() as u64);
+    // This field seems mandatory
+    let fallback_locktime = match fallback_locktime {
+        Some(l) => Some(l),
+        None => Some(elements_miniscript::elements::LockTime::ZERO),
+    };
 
     impl_pset_get_pair! {
         rv.push_mandatory(version as <PSET_GLOBAL_TX_VERSION, _>)
