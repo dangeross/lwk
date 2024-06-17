@@ -15,7 +15,8 @@ lwk_wollet = { version = "0.5" }
 lwk_containers = { version = "0.3" }
 
 electrsd = { version = "0.27.2", features = ["legacy"] }
-elements = "0.24.0"
+#elements = "0.24.0"
+elements = { git = "https://github.com/ElementsProject/rust-elements", rev = "487f31b8d70d26689b48b81ee8f27d6803f84af2" }
 serde_json = "1"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
