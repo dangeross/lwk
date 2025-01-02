@@ -117,6 +117,8 @@ pub use crate::wollet::{Tip, Wollet};
 #[cfg(feature = "electrum")]
 pub use crate::wollet::full_scan_with_electrum_client;
 #[cfg(feature = "electrum")]
+pub use crate::wollet::full_scan_to_index_with_electrum_client;
+#[cfg(feature = "electrum")]
 pub use clients::electrum_client::{ElectrumClient, ElectrumOptions, ElectrumUrl};
 
 #[cfg(feature = "esplora")]
